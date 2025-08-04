@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+button{
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+section{
+    flex: 2;
+    background-color: rgb(243, 241, 242);
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: rgb(249, 250, 250);
+}
+
+/* Tarjeta de perfil */
+
+
+/* Tarjeta de Usuario */
+
+.card {
+    width: 100%;
+    height: max-content;
+    padding: 0px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(206, 206, 206);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card h1 {
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.card_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    padding: 15px;
+    gap: 10px;
+
+}
+
+.card_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .card_header {
+    background-color: rgb(229, 14, 14);
+    height: 100px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-education {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+}
+.card_header .card_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    width: max-content;
+    height: max-content;
+    position: relative;
+    top: 40px;
+    /* Adjust as needed */
+    z-index: 10;
+
+
+}
+
+.card_header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 10;
+}
+
+.aside-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 260px;
+}
+.aside-card h2 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.aside-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.aside-card li {
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn-view {
+    background: #eaf6ff;
+    color: #d21919;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+.btn-view:hover {
+    background: #1976d2;
+    color: #fff;
+}
+.icon-accept {
+    color: #43a047;
+    margin-left: 8px;
+}
+.icon-deny {
+    color: #e53935;
+    margin-left: 4px;
+}
+
+
