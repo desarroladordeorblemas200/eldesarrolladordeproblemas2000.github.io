@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para alguien especial</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            overflow: hidden;
+            color: #4a4a4a;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .icon {
+            font-size: 3rem;
+            color: #ff477e;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ff477e;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #5c5c5c;
+        }
+
+        .btn {
+            background-color: #ff477e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(255, 71, 126, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #ff0a54;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Corazones flotantes de fondo */
+        .heart-particle {
+            position: absolute;
+            color: #ffb3c6;
+            pointer-events: none;
+            font-size: 1.5rem;
+            animation: floatUp 4s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="icon">✨</div>
+        <h1 id="title">Un pequeño recordatorio...</h1>
+        <p id="text">Solo quería decirte que, desde que te vi el otro día, me pareciste bonita y te iba a pedir el ig
+        pero me retiraron pero, si te molesta me dices nomas.</p>
+        <button class="btn" id="actionBtn">Hacer clic aquí</button>
+    </div>
+
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const title = document.getElementById('title');
+        const text = document.getElementById('text');
+
+        // Evento al hacer clic en el botón
+        btn.addEventListener('click', () => {
+            // Cambia el contenido con un efecto sutil
+            title.textContent = "De verdad.";
+            text.textContent = "ojalás poder conocerte y eso ph que descanses. 😊";
+            
+            // Oculta el botón para cerrar la interacción con estilo
+            btn.style.display = 'none';
+
+            // Lanza una lluvia de corazones de fondo
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createHeart, i * 150);
+            }
+        });
+
+        // Función para crear partículas de corazones flotantes
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-particle');
+            heart.innerHTML = '❤️';
+            
+            // Posición horizontal aleatoria y velocidad variable
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's'; 
+            
+            document.body.appendChild(heart);
+
+            // Elimina el elemento después de que termine la animación
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
